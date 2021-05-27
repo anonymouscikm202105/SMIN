@@ -1,7 +1,7 @@
-# HMIN
-# **HMIN**
+# SMIN
+# **SMIN**
 
-Source code for ***Hierarchically Structured Metagraph Informax Network for Knowledge-Enhanced Social Recommendation***
+Source code for ***Social Recommendation with Self-Supervised Metagraph Informax Network***
 
 # Requirements
 
@@ -14,7 +14,7 @@ Source code for ***Hierarchically Structured Metagraph Informax Network for Know
 
 - CiaoDVD
 
-  > **rating.mat和trust.mat**as original data source from https://www.cse.msu.edu/~tangjili/datasetcode/truststudy.htm
+  > **rating.mat and trust.mat** as original data source from https://www.cse.msu.edu/~tangjili/datasetcode/truststudy.htm
   >
   > **loadMat.py**: training/test data partition
   >
@@ -41,21 +41,25 @@ python main.py --dataset CiaoDVD --hide_dim 16 --layer_dim [16] --lr 0.05 --reg 
 **Combination of sub-modules and code organization**
 
 > `Interface`
+> 
 > BPRData.py: for generating the positive and negative instances corresponding to training and test set, respectively
 >
 > evaluate.py: perform evaluation of our proposed framework
 >
 > `MV_MIL` (Multi-view Graph-Structured Mutual Information Learning Paradigm)
+> 
 > gmi.py: incorporate the learned social- and knowledge-aware dependence to guide the user-item interaction embedding process through deriving mutual information terms from different views.
 >
 > gcn.py and graphconv.py: the basic graph neural network architecture with the convolutional relation encoder
 >
 > `ToolScripts`
+> 
 > TimeLogger.py: log timestamp information
 >
 > tools.py: convert the sparse matrices to sparse tensors
 >
 > `model.py`
+> 
 > model class integrates the graph neural network architecture with high-order relation modeling
 > SemanticAttention class defines the attention mechanism to aggregate metapath-specific representations
 >
